@@ -6,3 +6,7 @@ bootstrap__consul_encryption_key: '{{lookup("bitwarden", "consul/cluster", field
 bootstarp__consul_agent_acl_token: '{{lookup("bitwarden", "consul/acl-tokens", field="agent-default")}}'
 # Wireguard
 wireguard_consul_acl_token: '{{lookup("bitwarden", "consul/acl-tokens", field="wireguard")}}'
+
+# SSH Access
+bootstrap__active_extra_users:
+  - { name: fryorcraken, uid: 8000, groups: ['sudo'], key: 'sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIOYBb8yvAPN98qRB1BZApW/iEnEawlMWyJOXKPPHR2cHAAAABHNzaDo= fryorcraken@status.im' }
