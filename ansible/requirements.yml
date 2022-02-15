@@ -28,3 +28,8 @@
   src: git@github.com:status-im/infra-role-certbot.git
   version: 4b93ca81043f843d573c43b42f50e7620e81590d
   scm: git
+
+- name: infra-role-nim-waku
+  src: git@github.com:status-im/infra-role-nim-waku.git
+  version: bfbc9bf71b5902dc41d25e3b9c4a84c59755ff40
+  scm: git
