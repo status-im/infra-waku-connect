@@ -1,5 +1,5 @@
 module "hosts" {
-  source = "github.com/status-im/infra-tf-digital-ocean"
+  source = "github.com/status-im/infra-tf-multi-provider"
 
   /* general */
   env    = "waku"
@@ -8,8 +8,10 @@ module "hosts" {
   domain = var.domain
 
   /* scaling */
-  host_count = 3
-  type       = "s-1vcpu-1gb"
+  host_count = 1
+  ac_type    = "ecs.t5-lc1m1.small"
+  do_type    = "s-1vcpu-1gb"
+  gc_type    = "g1-small"
 
   /* firewall */
   open_tcp_ports = [

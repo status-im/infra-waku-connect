@@ -10,5 +10,17 @@ provider "cloudflare" {
   account_id = data.pass_password.cloudflare_account.password
 }
 
+provider "google" {
+  credentials = data.pass_password.google_cloud_cred_json.full
+  project     = "russia-servers"
+  region      = "us-central1"
+}
+
+provider "alicloud" {
+  access_key = data.pass_password.alicloud_access_key.password
+  secret_key = data.pass_password.alicloud_secret_key.password
+  region     = "cn-hongkong"
+}
+
 # Uses PASSWORD_STORE_DIR environment variable
 provider "pass" {}
