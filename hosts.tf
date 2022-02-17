@@ -1,10 +1,11 @@
-module "hosts" {
+module "nim_waku_nodes" {
   source = "github.com/status-im/infra-tf-multi-provider"
 
   /* general */
+  name   = "nim"
   env    = "waku"
   stage  = "connect"
-  group  = "waku-connect"
+  group  = "nim-waku-connect"
   domain = var.domain
 
   /* scaling */
