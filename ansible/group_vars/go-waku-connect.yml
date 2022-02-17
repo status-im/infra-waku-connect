@@ -20,6 +20,7 @@ go_waku_websocket_ssl_key: '/etc/letsencrypt/live/{{ dns_entry }}/privkey.pem'
 
 # LetsEncrypt via Certbot
 certbot_admin_email: 'devops@status.im'
+certbot_containers_to_stop: ['go-waku-node']
 certbot_certs:
   - domains: [ '{{ dns_entry }}' ]
 
