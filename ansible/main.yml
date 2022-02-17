@@ -9,11 +9,20 @@
     - local_action: command ./versioncheck.py
       changed_when: false
 
-- name: Configure Waku Nodes
+- name: Configure Nim-Waku Nodes
   hosts:
-    - waku.connect
+    - nim-waku-connect
   roles:
     - { role: open-ports, tags: open-ports }
     - { role: swap-file,  tags: swap-file }
     - { role: certbot,    tags: certbot }
     - { role: nim-waku,   tags: nim-waku }
+
+- name: Configure Go-Waku Nodes
+  hosts:
+    - go-waku-connect
+  roles:
+    - { role: open-ports, tags: open-ports }
+    - { role: swap-file,  tags: swap-file }
+    - { role: certbot,    tags: certbot }
+    - { role: go-waku,    tags: go-waku }

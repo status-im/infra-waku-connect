@@ -29,7 +29,12 @@
   version: 4b93ca81043f843d573c43b42f50e7620e81590d
   scm: git
 
-- name: infra-role-nim-waku
+- name: nim-waku
   src: git@github.com:status-im/infra-role-nim-waku.git
   version: 5d94f2f2ba8251af2837b4e4b6d05d17ce9e23a5
+  scm: git
+
+- name: go-waku
+  src: git@github.com:status-im/infra-role-go-waku.git
+  version: 90ff75700534d997a8ed1482ab3fea4687922d39
   scm: git
