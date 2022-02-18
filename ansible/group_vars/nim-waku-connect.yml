@@ -1,5 +1,5 @@
 ---
-nim_waku_cont_tag: 'deploy-v2-prod'
+nim_waku_cont_tag: 'deploy-waku-connect'
 nim_waku_cont_name: 'nim-waku'
 
 # Protocols
@@ -27,8 +27,9 @@ nim_waku_websocket_ssl_cert: '/etc/letsencrypt/live/{{ nim_waku_websocket_domain
 nim_waku_websocket_ssl_key: '/etc/letsencrypt/live/{{ nim_waku_websocket_domain }}/privkey.pem'
 
 # LetsEncrypt via Certbot
-certbot_docker_enabled: true
 certbot_admin_email: 'devops@status.im'
+certbot_docker_enabled: true
+certbot_containers_to_stop: ['nim-waku']
 certbot_certs:
   - domains: [ '{{ nim_waku_websocket_domain }}' ]
 
