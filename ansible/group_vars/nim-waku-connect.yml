@@ -26,6 +26,10 @@ nim_waku_websocket_ssl_dir: '/etc/letsencrypt'
 nim_waku_websocket_ssl_cert: '/etc/letsencrypt/live/{{ nim_waku_websocket_domain }}/fullchain.pem'
 nim_waku_websocket_ssl_key: '/etc/letsencrypt/live/{{ nim_waku_websocket_domain }}/privkey.pem'
 
+# Peer connecting
+nim_waku_connect_consul_service_names: ['{{ nim_waku_cont_name }}']
+nim_waku_connect_rpc_port: '{{ nim_waku_rpc_tcp_port }}'
+
 # LetsEncrypt via Certbot
 certbot_admin_email: 'devops@status.im'
 certbot_docker_enabled: true
