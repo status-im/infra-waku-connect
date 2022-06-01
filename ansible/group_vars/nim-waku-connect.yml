@@ -20,7 +20,6 @@ nim_waku_store_capacity: 10000
 # Enable websockets in Waku
 nim_waku_websocket_enabled: true
 nim_waku_websocket_secure_enabled: true
-nim_waku_websocket_cont_port: 8000
 nim_waku_websocket_domain: '{{ dns_entry }}'
 nim_waku_websocket_ssl_dir: '/etc/letsencrypt'
 nim_waku_websocket_ssl_cert: '/etc/letsencrypt/live/{{ nim_waku_websocket_domain }}/fullchain.pem'
