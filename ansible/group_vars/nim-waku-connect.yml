@@ -1,9 +1,9 @@
 ---
 nim_waku_cont_tag: 'deploy-waku-connect'
 nim_waku_cont_name: 'nim-waku'
-
 # Protocols
 nim_waku_protocols_enabled: ['relay', 'filter', 'lightpush']
+nim_waku_dns4_domain_name: '{{ dns_entry }}'
 
 # Ports
 nim_waku_p2p_tcp_port: 30303
@@ -26,7 +26,7 @@ nim_waku_websocket_ssl_cert: '/etc/letsencrypt/live/{{ nim_waku_websocket_domain
 nim_waku_websocket_ssl_key: '/etc/letsencrypt/live/{{ nim_waku_websocket_domain }}/privkey.pem'
 
 # Peer connecting
-nim_waku_connect_consul_service_names: ['{{ nim_waku_cont_name }}']
+nim_waku_connect_consul_service_names: ['{{ nim_waku_cont_name }}', 'go-waku']
 nim_waku_connect_rpc_port: '{{ nim_waku_rpc_tcp_port }}'
 
 # LetsEncrypt via Certbot
