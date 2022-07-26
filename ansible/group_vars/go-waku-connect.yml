@@ -1,8 +1,10 @@
 ---
 # Go-Waku
 go_waku_service_name: 'go-waku'
+go_waku_cont_name: '{{ go_waku_service_name }}'
 go_waku_cont_tag: 'deploy-test'
 # Ports
+go_waku_rpc_port: 8545
 go_waku_libp2p_port: 30303
 go_waku_metrics_port: 8008
 go_waku_websocket_port: 9001
@@ -18,10 +20,18 @@ go_waku_websocket_ssl_domain: '{{ dns_entry }}'
 go_waku_websocket_ssl_cert: '/etc/letsencrypt/live/{{ dns_entry }}/fullchain.pem'
 go_waku_websocket_ssl_key: '/etc/letsencrypt/live/{{ dns_entry }}/privkey.pem'
 
+# Peer connecting
+waku_peers_rpc_port: '{{ go_waku_rpc_port }}'
+waku_peers_rpc_timeout: 20
+waku_peers_rpc_retries: 5
+waku_peers_consul_services:
+  - { name: '{{ go_waku_cont_name }}',  env: '{{ env }}', stage: '{{ stage }}' }
+  - { name: 'nim-waku',                 env: '{{ env }}', stage: '{{ stage }}' }
+
 # LetsEncrypt via Certbot
 certbot_admin_email: 'devops@status.im'
 certbot_docker_enabled: true
-certbot_containers_to_stop: ['go-waku-node']
+certbot_containers_to_stop: ['{{ go_waku_cont_name }}']
 certbot_certs:
   - domains: [ '{{ dns_entry }}' ]
 

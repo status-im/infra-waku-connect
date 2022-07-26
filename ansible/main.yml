@@ -27,3 +27,4 @@
     - { role: swap-file,  tags: swap-file  }
     - { role: certbot,    tags: certbot    }
     - { role: go-waku,    tags: go-waku    }
+    - { role: waku-peers, tags: waku-peers }
